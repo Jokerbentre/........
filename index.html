@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            background-image: url('https://cdn.phototourl.com/anon/2026-11-22-718e7e69-6727-441b-8b8c-ccadedce6f6a.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .profile-card {
+            background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            position: relative;
+            margin: 20px;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 140px;
+            background-image: url('https://www.image2url.com/r2/default/gifs/1795318379254-39ea19c4-4239-4a4e-9bbf-2b29311bb213.gif');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .share-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-header {
+            padding: 0 20px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            margin-top: -45px;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #2a2a2a;
+            background-color: #000;
+            z-index: 2;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .name-display {
+            margin-left: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .bio-text {
+            padding: 20px;
+            font-size: 14px;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .info-container {
+            padding: 0 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #888;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .social-box {
+            background-color: #1e2a44;
+            border: 1px solid #2a3b5c;
+            border-radius: 12px;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s;
+        }
+
+        .social-box:hover {
+            background-color: #263656;
+        }
+
+        .social-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .facebook-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .social-name {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .social-sub {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 2px;
+        }
+
+        .friend-count {
+            font-size: 12px;
+            color: #aaa;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="cover-photo">
+            <div class="share-btn">SHARE PROFILE LINK</div>
+        </div>
+
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img src="https://i.ibb.co/DBLrzWt/avatar.jpg" alt="Avatar">
+            </div>
+            <div class="name-display">ℍ𝕒𝕣𝕦</div>
+        </div>
+
+        <div class="bio-text">
+            nhìn nữa tui địt chết
+        </div>
+
+        <div class="info-container">
+            <div class="info-box">
+                <div class="info-label">STATUS</div>
+                <div class="info-value">đang lọ</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">TIMEZONE</div>
+                <div class="info-value" id="clock-display">Đang tải...</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">COUNTRY</div>
+                <div class="info-value">ℍ𝕒𝕚ℙ𝕙𝕠𝕟𝕘 / 𝕊𝔼𝔸</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">BIRTHDAY</div>
+                <div class="info-value">20 / 10 / 2018</div>
+            </div>
+
+            <a href="https://www.facebook.com/share/1A8j7K4FG5/" target="_blank" class="social-box">
+                <div class="social-info">
+                    <!-- Đã đổi icon Facebook thành ảnh từ link yêu cầu -->
+                    <img src="https://cdn.phototourl.com/anon/2026-11-22-190815aa-a23f-471b-a2a9-ec04e7125a5a.png" alt="FB" class="facebook-icon">
+                    <div>
+                        <div class="social-name">FACEBOOK</div>
+                        <div class="social-sub">ʙᴀ̉ᴏ • ʟᴇ̂ ʙᴀ̉ᴏ</div>
+                    </div>
+                </div>
+                <div class="friend-count">0 FRIENDS</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const date = new Date();
+            
+            const timeParts = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Asia/Ho_Chi_Minh",
+                hour12: false,
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            }).formatToParts(date);
+
+            const getPart = (type) => timeParts.find(p => p.type === type).value;
+
+            const hour = getPart("hour");
+            const minute = getPart("minute");
+            const second = getPart("second");
+            const day = getPart("day");
+            const month = getPart("month");
+            const year = getPart("year");
+
+            const formattedTime = `VN | ${day}/${month}/${year} ${hour}:${minute}:${second}`;
+            
+            document.getElementById('clock-display').textContent = formattedTime;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+</body>
+  </html>
